@@ -29,7 +29,10 @@ class Fraction {
     // ukoliko je poslednja verizna decimala 1, izbaci je i prethodnu veriznu decimalu povecaj za 1
     if (this.coefficients[this.coefficients.length - 1] == 1){ 
       this.coefficients.pop();
-      this.coefficients[this.coefficients.length - 1] += 1;
+      if (this.coefficients.length == 0) // ukoliko je 1 bila prva i poslednja verizna decimala
+        this.coefficients.push(1);
+      else
+        this.coefficients[this.coefficients.length - 1] += 1;
     }
   }
 
